@@ -7,9 +7,9 @@ public class Main {
         Main T = new Main();
 
         Scanner in=new Scanner(System.in);
-        String str = in.next();
+        String str = in.nextLine();
 
-        System.out.println(T.solution7_1(str));
+        System.out.println(T.solution8_2(str));
     }
 
     //7.1 회문 문자열(StringBuilder의 reverse() 사용)
@@ -32,5 +32,38 @@ public class Main {
         }
 
         return "YES";
+    }
+
+    //8.1 유효한 팰린드룸
+    public String solution8_1(String str){
+        str = str.toUpperCase();
+
+        int lt =0;
+        int rt = str.length()-1;
+
+        while(lt<rt){
+            if (!Character.isAlphabetic(str.charAt(lt))) lt++;
+            else if (!Character.isAlphabetic(str.charAt(rt))) rt--;
+            else
+            {
+                if(str.charAt(lt) != str.charAt(rt)) return "NO";
+
+                lt++;
+                rt--;
+            }
+        }
+
+        return "YES";
+    }
+
+    //8.2 유효한 팰린드룸(ReplaceAll + 정규식 사용)
+    public String solution8_2(String str){
+        str = str.toUpperCase();
+        str = str.replaceAll("[^A-Z]", "");
+
+        String tmp = new StringBuilder(str).reverse().toString();
+
+        if (tmp.equals(str)) return "YES";
+        else return "NO";
     }
 }

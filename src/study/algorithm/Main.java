@@ -7,9 +7,12 @@ public class Main {
         Main T = new Main();
 
         Scanner in=new Scanner(System.in);
-        String str = in.nextLine();
+        String str = in.next();
+        String target = in.next();
 
-        System.out.println(T.solution9(str));
+        for (int a: T.solution10(str, target)){
+            System.out.println(a + " ");
+        }
     }
 
     //7. 회문 문자열
@@ -103,5 +106,40 @@ public class Main {
         }
 
         return Integer.parseInt(ans);
+    }
+
+    //10. 가장 짧은 문자 거리
+    public int[] solution10(String str, String target){
+        int result[] = new int[str.length()];
+
+        int pos = 101;
+
+        //우방향으로 1차 검사
+        for (int i=0;i<str.length();i++){
+            if (str.charAt(i) == target.charAt(0)) {
+                pos = 0;
+                result[i] = pos;
+            }
+            else{
+                pos ++;
+                result[i] = pos;
+            }
+        }
+
+        pos = 101;
+
+        //좌방향으로 2차 검사
+        for (int i=str.length()-1;i>=0;i--){
+            if (str.charAt(i) == target.charAt(0)) {
+                pos = 0;
+            }
+            else{
+                pos ++;
+
+                result[i] = Math.min(result[i], pos);
+            }
+        }
+
+        return result;
     }
 }

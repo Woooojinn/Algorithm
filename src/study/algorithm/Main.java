@@ -142,4 +142,57 @@ public class Main {
 
         return result;
     }
+
+    //11. 문자열 압축
+    public String solution11(String str){
+            //KKTFFFFFFEEE
+            //K2TF6E
+
+        //내 코드(
+        /*
+            char arr[] = str.toCharArray();
+
+            String ans = "";
+
+            int cnt = 1;
+
+            ans += arr[0];
+
+            for(int i=1;i<arr.length;i++){
+                if (arr[i] != arr[i-1]){
+                    if (cnt > 1){
+                        ans += cnt;
+                        cnt = 1;
+                    }
+
+                    ans += arr[i];
+                }
+                else
+                {
+                    cnt++;
+                }
+            }
+
+            if (cnt>1) ans += cnt;
+
+            return ans;
+
+         */
+
+        //정답 코드
+        String ans = "";
+
+        int cnt = 1;
+
+        for (int i=0;i<str.length();i++){
+            if (str.charAt(i) == str.charAt(i+1)) cnt ++;
+            else {
+                ans += str.charAt(i);
+                if (cnt > 1) ans += cnt;
+                cnt = 1;
+            }
+        }
+
+        return ans;
+    }
 }

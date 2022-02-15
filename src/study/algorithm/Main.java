@@ -8,11 +8,8 @@ public class Main {
 
         Scanner in=new Scanner(System.in);
         String str = in.next();
-        String target = in.next();
 
-        for (int a: T.solution10(str, target)){
-            System.out.println(a + " ");
-        }
+        System.out.println(T.solution11(str));
     }
 
     //7. 회문 문자열
@@ -182,10 +179,12 @@ public class Main {
         //정답 코드
         String ans = "";
 
+        str = str + " ";
+
         int cnt = 1;
 
-        for (int i=0;i<str.length();i++){
-            if (str.charAt(i) == str.charAt(i+1)) cnt ++;
+        for (int i=0;i<str.length()-1;i++){
+            if (str.charAt(i) == str.charAt(i+1)) cnt++;
             else {
                 ans += str.charAt(i);
                 if (cnt > 1) ans += cnt;

@@ -22,8 +22,8 @@ public class Main {
 
         System.out.println(T.solution2_1(arr));
         */
-
         //2) 정답
+        /*
         int cnt = in.nextInt();
 
         int arr[] = new int[cnt];
@@ -35,6 +35,19 @@ public class Main {
         for (int x: T.solution2_1(arr)){
             System.out.print(x + " ");
         }
+        */
+
+        //2.2
+        //1) 내 코드
+        int cnt = in.nextInt();
+
+        int arr[] = new int[cnt];
+
+        for (int i=0;i<cnt;i++){
+            arr[i] = in.nextInt();
+        }
+
+        System.out.print(T.solution2_2(arr));
     }
 
     //7. 회문 문자열
@@ -286,5 +299,23 @@ public class Main {
         }
 
         return list;
+    }
+
+    //2.2 보이는 학생
+    public int solution2_2(int[] arr){
+        //1) 내 코드
+        int max = arr[0];
+        int cnt = 1;
+
+        for (int i=0;i<arr.length;i++){
+            if (arr[i] > max){
+                cnt ++;
+                max = arr[i];
+            }
+        }
+
+        return cnt;
+
+        //2) 정답(동일)
     }
 }

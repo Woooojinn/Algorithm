@@ -1,5 +1,6 @@
 package study.algorithm;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,10 +8,33 @@ public class Main {
         Main T = new Main();
 
         Scanner in=new Scanner(System.in);
-        int cnt = in.nextInt();
-        String str = in.next();
 
-        System.out.println(T.solution12(cnt, str));
+        //2.1
+        //1) 내 코드
+        /*
+        int cnt = in.nextInt();
+
+        int arr[] = new int[cnt];
+
+        for (int i=0;i<cnt;i++){
+            arr[i] = Integer.valueOf(in.next());
+        }
+
+        System.out.println(T.solution2_1(arr));
+        */
+
+        //2) 정답
+        int cnt = in.nextInt();
+
+        int arr[] = new int[cnt];
+
+        for (int i=0;i<cnt;i++){
+            arr[i] = in.nextInt();
+        }
+
+        for (int x: T.solution2_1(arr)){
+            System.out.print(x + " ");
+        }
     }
 
     //7. 회문 문자열
@@ -236,5 +260,31 @@ public class Main {
         }
 
         return ans;
+    }
+
+    //2.1 큰 수 출력하기
+    public ArrayList<Integer> solution2_1(int[] arr){
+        //1) 내 코드
+        /*
+        String ans = "";
+        ans += arr[0] + " ";
+
+        for (int i=1;i<arr.length;i++){
+            if (arr[i] > arr[i-1]) ans += (arr[i] + " ");
+        }
+
+        return ans;
+         */
+
+        //2) 정답
+        ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(arr[0]);
+
+        for (int i=1; i<arr.length;i++){
+            if (arr[i]>arr[i-1]) list.add(arr[i]);
+        }
+
+        return list;
     }
 }

@@ -7,9 +7,10 @@ public class Main {
         Main T = new Main();
 
         Scanner in=new Scanner(System.in);
+        int cnt = in.nextInt();
         String str = in.next();
 
-        System.out.println(T.solution11(str));
+        System.out.println(T.solution12(cnt, str));
     }
 
     //7. 회문 문자열
@@ -190,6 +191,48 @@ public class Main {
                 if (cnt > 1) ans += cnt;
                 cnt = 1;
             }
+        }
+
+        return ans;
+    }
+
+    //12. 암호
+    public String solution12(int cnt, String str){
+        //1) 내 코드
+        /*
+        String ans = "";
+
+        int s = 0;
+
+        for (int i=0;i<str.length();i++){
+
+            int tmp = str.charAt(i) == '#' ? 1:0;
+
+            if (tmp == 1){
+                s += Math.pow(2,6 - (i%7));
+            }
+
+            if (i!=0 && (i+1)%7 == 0)
+            {
+                ans += (char)s;
+                s = 0;
+            }
+        }
+
+        return ans;
+        */
+
+        //2) substring, replace 사용
+        String ans = "";
+
+        for (int i=0;i<cnt;i++){
+            String tmp = str.substring(0,7).replace('#','1').replace('*','0');
+
+            int num = Integer.parseInt(tmp, 2);
+
+            ans += (char) num;
+
+            str = str.substring(7);
         }
 
         return ans;

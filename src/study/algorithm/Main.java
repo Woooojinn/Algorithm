@@ -38,7 +38,7 @@ public class Main {
         */
 
         //2.2
-        //1) 내 코드
+        /*
         int cnt = in.nextInt();
 
         int arr[] = new int[cnt];
@@ -48,6 +48,25 @@ public class Main {
         }
 
         System.out.print(T.solution2_2(arr));
+        */
+
+        //2.3
+        int num = in.nextInt();
+
+        int a[] = new int[num];
+        int b[] = new int[num];
+
+        for(int i=0;i<num;i++){
+            a[i] = in.nextInt();
+        }
+
+        for(int i=0;i<num;i++){
+            b[i] = in.nextInt();
+        }
+
+        for (String result:T.solution2_3(a, b)){
+            System.out.println(result);
+        }
     }
 
     //7. 회문 문자열
@@ -317,5 +336,40 @@ public class Main {
         return cnt;
 
         //2) 정답(동일)
+    }
+
+    //2.3 가위 바위 보
+    public ArrayList<String> solution2_3(int a[], int b[]){
+        //1) 내 코드
+        /*
+        ArrayList<String> list = new ArrayList<>();
+
+        for(int i=0;i<a.length;i++){
+            //1
+            if (a[i] == 1){
+                if (b[i] == 1) list.add("D");
+                else if (b[i] == 2) list.add("B"); // 1 2
+                else list.add("A"); // 1 3
+            }
+            //2
+            else if (a[i] == 2){
+                if (b[i] == 1) list.add("A"); // 2 1
+                else if (b[i] == 2) list.add("D");
+                else list.add("B"); // 2 3
+            }
+            //3
+            else{
+                if (b[i] == 1) list.add("B"); // 3 1
+                else if (b[i] == 2) list.add("A"); // 3 2
+                else list.add("D");
+            }
+        }
+
+        return list;
+
+         */
+
+        //2) 정답
+
     }
 }

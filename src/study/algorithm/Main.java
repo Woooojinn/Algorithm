@@ -51,6 +51,8 @@ public class Main {
         */
 
         //2.3
+        //1) 내 코드
+        /*
         int num = in.nextInt();
 
         int a[] = new int[num];
@@ -67,6 +69,27 @@ public class Main {
         for (String result:T.solution2_3(a, b)){
             System.out.println(result);
         }
+
+         */
+
+        //2) 정답
+
+        //2.4
+        //1) 내 코드
+        /*
+        int cnt = in.nextInt();
+
+        for (int x: T.solution2_4(cnt)){
+            System.out.print(x + " ");
+        }
+         */
+        //2) 정답
+
+        //2.5
+        //1) 내 코드
+        System.out.println(T.solution2_5(in.nextInt()));
+        //2) 정답
+
     }
 
     //7. 회문 문자열
@@ -341,7 +364,7 @@ public class Main {
     //2.3 가위 바위 보
     public ArrayList<String> solution2_3(int a[], int b[]){
         //1) 내 코드
-        /*
+
         ArrayList<String> list = new ArrayList<>();
 
         for(int i=0;i<a.length;i++){
@@ -367,9 +390,48 @@ public class Main {
 
         return list;
 
-         */
+
 
         //2) 정답
 
     }
+
+    //2.4 피보나치 수열
+    public int[] solution2_4(int cnt){
+        int[] arr= new int[cnt];
+
+        arr[0] = 1;
+        arr[1] = 1;
+
+        for (int i=2;i<cnt;i++){
+            arr[i] = arr[i-1] + arr[i-2];
+        }
+
+        return arr;
+    }
+
+    //2.5 소수(에라토스테네스 체)
+    public int solution2_5(int num){
+        //1) 내 코드
+
+        int ans = 4; //2,3,5,7
+
+        for (int i=10;i<=num;i++){
+            if(((i%2) != 0)
+                    && ((i%3) != 0)
+                    && ((i%5) != 0)
+                    && ((i%7) != 0)){
+                System.out.println(i);
+                ans ++;
+            }
+        }
+
+        return ans;
+
+
+        //2) 정답
+
+    }
+
+    //
 }

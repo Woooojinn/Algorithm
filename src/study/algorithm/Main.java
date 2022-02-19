@@ -73,6 +73,25 @@ public class Main {
          */
 
         //2) 정답
+        /*
+        int num = in.nextInt();
+
+        int a[] = new int[num];
+        int b[] = new int[num];
+
+        for(int i=0;i<num;i++){
+            a[i] = in.nextInt();
+        }
+
+        for(int i=0;i<num;i++){
+            b[i] = in.nextInt();
+        }
+
+        for (char c:T.solution2_3(a, b).toCharArray()){
+            System.out.println(c);
+        }
+
+         */
 
         //2.4
         //1) 내 코드
@@ -362,9 +381,9 @@ public class Main {
     }
 
     //2.3 가위 바위 보
-    public ArrayList<String> solution2_3(int a[], int b[]){
+    public String solution2_3(int a[], int b[]){
         //1) 내 코드
-
+/*
         ArrayList<String> list = new ArrayList<>();
 
         for(int i=0;i<a.length;i++){
@@ -391,13 +410,26 @@ public class Main {
         return list;
 
 
+*/
+        //2) 정답(A가 비기고, 이기고, 지는 기준만 정하기)
 
-        //2) 정답
+        String ans = "";
+
+        for (int i =0;i<a.length;i++){
+            if (a[i] == b[i]) ans += "D";
+            else if (a[i] == 1 && b[i] == 3) ans += "A";
+            else if (a[i] == 2 && b[i] == 1) ans += "A";
+            else if (a[i] == 3 && b[i] == 2) ans += "A";
+            else ans += "B";
+        }
+
+        return ans;
 
     }
 
     //2.4 피보나치 수열
     public int[] solution2_4(int cnt){
+        //내 코드, 정답 동일
         int[] arr= new int[cnt];
 
         arr[0] = 1;
@@ -413,7 +445,7 @@ public class Main {
     //2.5 소수(에라토스테네스 체)
     public int solution2_5(int num){
         //1) 내 코드
-
+        /*
         int ans = 4; //2,3,5,7
 
         for (int i=10;i<=num;i++){
@@ -428,9 +460,22 @@ public class Main {
 
         return ans;
 
+*/
+        //2) 정답(에라토스테네스 체 방법)
+        int cnt = 0;
 
-        //2) 정답
+        int ans[] = new int[num+1];
 
+        for(int i=2;i<=num;i++){
+            if(ans[i] == 0){
+                cnt++;
+
+                //배수 다 체크
+                for(int j = i;j<=num;j=j+i) ans[j]=1;
+            }
+        }
+
+        return cnt;
     }
 
     //

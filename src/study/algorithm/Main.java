@@ -105,9 +105,19 @@ public class Main {
         //2) 정답
 
         //2.5
-        //1) 내 코드
         System.out.println(T.solution2_5(in.nextInt()));
-        //2) 정답
+
+        //2.6
+        //1) 내 코ㄷ
+        int cnt = in.nextInt();
+
+        int arr[] = new int[cnt];
+
+        for (int i=0;i<cnt;i++){
+            arr[i] = in.nextInt();
+        }
+
+        System.out.print(T.solution2_6(arr));
 
     }
 
@@ -478,5 +488,36 @@ public class Main {
         return cnt;
     }
 
-    //
+    //2.6 뒤집은 소수
+    public String solution2_6(int[] arr){
+        //1) 내 코드
+
+        String ans = "";
+
+        for(int i=0;i<arr.length;i++){
+            //뒤집힌 수 구하기
+            String rev ="";
+
+            int tmp = arr[i];
+
+            for(int j=0;j<Math.log10(arr[i]);j++){
+                rev += tmp%10;
+                tmp = tmp/10;
+            }
+
+            int num = Integer.parseInt(rev);
+
+            int k =0;
+
+            for (k=2;k<num;k++){
+                if (num%k == 0){
+                    break;
+                }
+            }
+
+            if (k == num) ans += num +" ";
+        }
+
+        return ans;
+    }
 }

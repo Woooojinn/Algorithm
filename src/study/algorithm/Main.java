@@ -105,10 +105,11 @@ public class Main {
         //2) 정답
 
         //2.5
-        System.out.println(T.solution2_5(in.nextInt()));
+        //System.out.println(T.solution2_5(in.nextInt()));
 
         //2.6
-        //1) 내 코ㄷ
+        //1) 내 코드
+        /*
         int cnt = in.nextInt();
 
         int arr[] = new int[cnt];
@@ -117,8 +118,22 @@ public class Main {
             arr[i] = in.nextInt();
         }
 
-        System.out.print(T.solution2_6(arr));
+        System.out.print(T.solution2_6_1(arr));
+         */
+        //2) 정답
+        /*
+        int cnt = in.nextInt();
+        int arr[] = new int[cnt];
 
+        for (int i =0;i<cnt;i++){
+            arr[i] = in.nextInt();
+        }
+
+
+        for (int x: T.solution2_6_2(cnt, arr)){
+            System.out.print(x + " ");
+        }
+         */
     }
 
     //7. 회문 문자열
@@ -488,10 +503,8 @@ public class Main {
         return cnt;
     }
 
-    //2.6 뒤집은 소수
-    public String solution2_6(int[] arr){
-        //1) 내 코드
-
+    //2.6 뒤집은 소수(내 코드)
+    public String solution2_6_1(int[] arr){
         String ans = "";
 
         for(int i=0;i<arr.length;i++){
@@ -520,4 +533,39 @@ public class Main {
 
         return ans;
     }
+
+    //2.6 뒤집은 소수(정답)
+    public ArrayList<Integer> solution2_6_2(int cnt, int[] arr){
+        ArrayList<Integer> list = new ArrayList<>();
+
+        //뒤집은 숫자 구하기
+        //1321
+        for (int i=0;i<cnt;i++){
+            int tmp = arr[i];
+            int target = 0;
+            int t = 0;
+
+            while(tmp>0){
+                t = tmp%10;
+                target = target * 10 + t;
+                tmp = tmp/10;
+            }
+
+            //소수 체크
+            if (isPrime(target)) list.add(target);
+        }
+
+        return list;
+    }
+
+    public boolean isPrime(int num){
+        if (num == 1) return false;
+
+        for (int i=2;i<num;i++){
+            if (num%i == 0) return false;
+        }
+
+        return true;
+    }
+
 }

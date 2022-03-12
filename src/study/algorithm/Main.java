@@ -1,5 +1,13 @@
 package study.algorithm;
 
+import study.algorithm.BFS.BinaryTreeBFS;
+import study.algorithm.BFS.CalfFinder;
+import study.algorithm.BFS.그래프최단거리;
+import study.algorithm.BFS.말단노드까지최단거리;
+import study.algorithm.DFS.경로탐색;
+import study.algorithm.DFS.경로탐색인접리스트;
+import study.algorithm.DFS.합이같은부분집합;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -134,6 +142,47 @@ public class Main {
             System.out.print(x + " ");
         }
          */
+
+        //7.4 재귀함수(피보나치)
+//        Recursive recursive = new Recursive();
+//        recursive.run(in.nextInt());
+
+        //7.5 이진트리순회(DFS)
+//        BinaryTree binaryTree = new BinaryTree();
+//        binaryTree.run();
+
+        //7.6 부분집합 구하기(DFS)
+//        Subset subset = new Subset();
+//        subset.run(in.nextInt());
+
+//        //7.7 이진트리탐색(BFS)
+//        BinaryTreeBFS binaryTreeBFS = new BinaryTreeBFS();
+//        binaryTreeBFS.run();
+
+        //7.8 송아지 찾기
+//        CalfFinder calfFinder = new CalfFinder();
+//        calfFinder.run(in.nextInt(), in.nextInt());
+
+        //7.10 말단 노드까지 최단 거리
+//        말단노드까지최단거리 c = new 말단노드까지최단거리();
+//        c.run();
+
+        //7.12 경로탐색(DFS)
+//        경로탐색 c = new 경로탐색();
+//        c.run();
+
+        //7.13 경로탐색(DFS, 인접리스트)
+//        경로탐색인접리스트 c = new 경로탐색인접리스트();
+//        c.run();
+
+        //7.14 최단거리(BFS)
+//        그래프최단거리 c = new 그래프최단거리();
+//        c.run();
+
+        //8.1 합이 같은 부분 집합
+        합이같은부분집합 c = new 합이같은부분집합();
+        c.run();
+
     }
 
     //7. 회문 문자열

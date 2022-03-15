@@ -6,6 +6,9 @@ import study.algorithm.DFS.경로탐색인접리스트;
 import study.algorithm.DFS.바둑이승차;
 import study.algorithm.DFS.합이같은부분집합;
 import study.algorithm.sorting.*;
+import study.algorithm.stack.괄호문자제거;
+import study.algorithm.stack.올바른괄호;
+import study.algorithm.stack.크레인인형뽑기;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -142,6 +145,18 @@ public class Main {
         }
          */
 
+        //5.1 올바른 괄호
+//        올바른괄호 c = new 올바른괄호();
+//        c.run();
+
+        //5.2 괄호 문자 제거
+        괄호문자제거 c = new 괄호문자제거();
+        c.run();
+
+        //5.3 크레인 인형뽑기
+//        크레인인형뽑기 c = new 크레인인형뽑기();
+//        c.run();
+
         //6.1 선택정렬
 //        선택정렬 c = new 선택정렬();
 //        c.run();
@@ -179,8 +194,8 @@ public class Main {
 //        c.run();
 
         //6.10 마구간 정하기
-        마구간정하기_결정알고리즘 c = new 마구간정하기_결정알고리즘();
-        c.run();
+//        마구간정하기_결정알고리즘 c = new 마구간정하기_결정알고리즘();
+//        c.run();
 
         //7.4 재귀함수(피보나치)
 //        Recursive recursive = new Recursive();

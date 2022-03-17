@@ -5,10 +5,9 @@ import study.algorithm.DFS.경로탐색;
 import study.algorithm.DFS.경로탐색인접리스트;
 import study.algorithm.DFS.바둑이승차;
 import study.algorithm.DFS.합이같은부분집합;
+import study.algorithm.queue.응급실;
 import study.algorithm.sorting.*;
-import study.algorithm.stack.괄호문자제거;
-import study.algorithm.stack.올바른괄호;
-import study.algorithm.stack.크레인인형뽑기;
+import study.algorithm.stack.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -150,12 +149,24 @@ public class Main {
 //        c.run();
 
         //5.2 괄호 문자 제거
-        괄호문자제거 c = new 괄호문자제거();
-        c.run();
+//        괄호문자제거 c = new 괄호문자제거();
+//        c.run();
 
         //5.3 크레인 인형뽑기
 //        크레인인형뽑기 c = new 크레인인형뽑기();
 //        c.run();
+
+        //5.4 후위식 연산
+//        후위식연산 c = new 후위식연산();
+//        c.run();
+
+        //5.5 쇠막대기
+//        쇠막대기 c = new 쇠막대기();
+//        c.run();
+
+        //5.6 응급실
+        응급실 c = new 응급실();
+        c.run();
 
         //6.1 선택정렬
 //        선택정렬 c = new 선택정렬();

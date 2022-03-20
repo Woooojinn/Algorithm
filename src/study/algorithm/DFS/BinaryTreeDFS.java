@@ -14,16 +14,15 @@ public class BinaryTreeDFS {
     //이진탐색트리(DFS)
     private void DFS(Node root){
         //전위순회
-        if (root == null) return;
-        else {
-            System.out.print(root.data + " ");
-            DFS(root.lt);
-            DFS(root.rt);
-        }
+//        if (root == null) return;
+//        else {
+//            System.out.print(root.data + " ");
+//            DFS(root.lt);
+//            DFS(root.rt);
+//        }
 
         //중위순회
 //        if (root == null) return;
-
 //        else {
 //            DFS(root.lt);
 //            System.out.print(root.data + " ");
@@ -31,12 +30,12 @@ public class BinaryTreeDFS {
 //        }
 
         //후위순회
-//        if (root == null) return;
-//        else {
-//            DFS(root.lt);
-//            DFS(root.rt);
-//            System.out.print(root.data + " ");
-//        }
+        if (root == null) return;
+        else {
+            DFS(root.lt);
+            DFS(root.rt);
+            System.out.print(root.data + " ");
+        }
     }
 
     public void run() {

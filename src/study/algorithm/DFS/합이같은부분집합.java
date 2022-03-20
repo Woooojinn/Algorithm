@@ -4,50 +4,41 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class 합이같은부분집합 {
-    int len;
-    int input[];
-    int ch[];
 
-    ArrayList<Integer> sum;
-    ArrayList<ArrayList<Integer>> list;
-    ArrayList<Integer> temp = new ArrayList<>();
+    int L = 0;
+    int arr[];
+    int sum = 0;
+    int total;
+    String ans = "NO";
+    boolean flag;
 
     public void run(){
         Scanner sc = new Scanner(System.in);
-         len = sc.nextInt();
+        int num = sc.nextInt();
 
-         input = new int[len];
+        arr = new int[num];
 
-        for (int i=0;i<len;i++){
-            input[i] = sc.nextInt();
+        for(int i=0;i<num;i++){
+            arr[i] = sc.nextInt();
+            total += arr[i];
         }
 
-        ch = new int[len];
-        sum = new ArrayList<>();
-        list = new ArrayList<>();
-
-        DFS(0);
-
-        for(int a: temp){
-            System.out.println(a + " ");
-        }
+        DFS(0, 0);
     }
 
     //1,3,5,6,7,10
-    //index:0
-    void DFS(int index){
-        if (index == len -1) {
-            if (ch[index] == 1) temp.add(input[index]);
-            return;
+    void DFS(int L, int sum){
+        if (flag) return;
+        if (L == arr.length){
+            if (sum == total/2) {
+                ans = "YES";
+                flag = true;
+            }
         }
         else
         {
-            ch[index] = 1;
-            temp.add(input[index]);
-            DFS(index+1);
-            temp.clear();
-            ch[index] = 0;
-            DFS(index+1);
+            DFS(L+1, sum+arr[L]);
+            DFS(L+1, sum);
         }
     }
 

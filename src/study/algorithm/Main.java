@@ -1,12 +1,13 @@
 package study.algorithm;
 
-import study.algorithm.BFS.BinaryTreeBFS;
-import study.algorithm.BFS.CalfFinder;
-import study.algorithm.BFS.그래프최단거리;
-import study.algorithm.BFS.말단노드까지최단거리;
+import study.algorithm.BFS.*;
 import study.algorithm.DFS.경로탐색;
 import study.algorithm.DFS.경로탐색인접리스트;
+import study.algorithm.DFS.바둑이승차;
 import study.algorithm.DFS.합이같은부분집합;
+import study.algorithm.queue.응급실;
+import study.algorithm.sorting.*;
+import study.algorithm.stack.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -143,6 +144,70 @@ public class Main {
         }
          */
 
+        //5.1 올바른 괄호
+//        올바른괄호 c = new 올바른괄호();
+//        c.run();
+
+        //5.2 괄호 문자 제거
+//        괄호문자제거 c = new 괄호문자제거();
+//        c.run();
+
+        //5.3 크레인 인형뽑기
+//        크레인인형뽑기 c = new 크레인인형뽑기();
+//        c.run();
+
+        //5.4 후위식 연산
+//        후위식연산 c = new 후위식연산();
+//        c.run();
+
+        //5.5 쇠막대기
+//        쇠막대기 c = new 쇠막대기();
+//        c.run();
+
+        //5.6 응급실
+        응급실 c = new 응급실();
+        c.run();
+
+        //6.1 선택정렬
+//        선택정렬 c = new 선택정렬();
+//        c.run();
+
+        //6.2 버블정렬
+//        버블정렬 c = new 버블정렬();
+//        c.run();
+
+        //6.3 삽입정렬
+//        삽입정렬 c = new 삽입정렬();
+//        c.run();
+
+        //6.4 LRU
+//        LRU c = new LRU();
+//        c.run();
+
+        //6.5 중복숫자
+//        중복숫자 c = new 중복숫자();
+//        c.run();
+
+        //6.6 장난꾸러기
+//        장난꾸러기 c = new 장난꾸러기();
+//        c.run();
+
+        //6.7 좌표정렬
+//        좌표정렬 c = new 좌표정렬();
+//        c.run();
+
+        //6.8 이분검색
+//        이분검색 c = new 이분검색();
+//        c.run();
+
+        //6.9 뮤직비디오
+//        뮤직비디오_결정알고리즘 c = new 뮤직비디오_결정알고리즘();
+//        c.run();
+
+        //6.10 마구간 정하기
+//        마구간정하기_결정알고리즘 c = new 마구간정하기_결정알고리즘();
+//        c.run();
+
         //7.4 재귀함수(피보나치)
 //        Recursive recursive = new Recursive();
 //        recursive.run(in.nextInt());
@@ -180,8 +245,21 @@ public class Main {
 //        c.run();
 
         //8.1 합이 같은 부분 집합
+<<<<<<< HEAD
         합이같은부분집합 c = new 합이같은부분집합();
         c.run();
+=======
+//        합이같은부분집합 c = new 합이같은부분집합();
+//        c.run();
+
+        //8.2 바둑이 승차
+//        바둑이승차 c = new 바둑이승차();
+//        c.run();
+
+        //8.11 미로의 최단거리 통로
+//        미로의최단거리통로 c = new 미로의최단거리통로();
+//        c.run();
+>>>>>>> 22a5f7ba6c3a2a43bec9148b43d10cff36973913
     }
 
     //7. 회문 문자열
